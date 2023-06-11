@@ -8,3 +8,12 @@ sampled_audio4ft/
 *.zip
 configs/finetune_speaker.json
 pretrained_models/
+
+final_annotation_train.txt
+final_annotation_val.txt
+long_character_anno.txt
+sampled_audio4ft.txt
+short_character_anno.txt
+
+separated/
+text/__pycache__/
