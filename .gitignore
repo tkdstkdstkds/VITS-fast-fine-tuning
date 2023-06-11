@@ -1,0 +1,8 @@
+video_data/
+raw_audio/
+denoised_audio/
+custom_character_voice/
+segmented_character_voice/
+
+sampled_audio4ft/
+*.zip

@@ -1,0 +1,14 @@
+
+1. install microsoft build tools
+https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/
+, install c++ desktop option
+and set cmake path to enviroment path
+and set C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.36.32532\bin\Hostx86\x64 to path
+
+2. vscode create conda enviroment
+3. pip install -r requirements.txt
+here may happen pyopenjtalk not install correctly, should do pip install pyopenjtalk manually.
+
+
+
+
