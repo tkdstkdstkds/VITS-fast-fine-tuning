@@ -13,7 +13,7 @@ set sampleAudioFolder=%sampleAudioName:_v2.zip=%
 if exist "%sampleAudioFolder%" (
     echo %sampleAudioFolder% already exists. Skipping tar.
 ) else (
-    tar -xf %sampleAudioName% %sampleAudioFolder%
+    tar -xf %sampleAudioName%
 )
 
 mkdir video_data
