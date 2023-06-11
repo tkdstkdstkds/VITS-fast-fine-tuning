@@ -6,3 +6,5 @@ segmented_character_voice/
 
 sampled_audio4ft/
 *.zip
+configs/finetune_speaker.json
+pretrained_models/
