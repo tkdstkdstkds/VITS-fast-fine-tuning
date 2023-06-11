@@ -9,6 +9,21 @@ and set C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\
 3. pip install -r requirements.txt
 here may happen pyopenjtalk not install correctly, should do pip install pyopenjtalk manually.
 
+4. make sure install torch and cude
+go to here select conda and os https://pytorch.org/get-started/locally/
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+You can use python check
+>>> import torch
+>>> print(torch.__version__)
+should print version without cpu tag
+Note: if already install torch cpu version, do pip uninstall torch, and do again => conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+>>> torch.cuda.is_available()
+should be True
+
+
+
+
+
 
 
 

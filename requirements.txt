@@ -5,9 +5,9 @@ scikit-learn==1.0.2
 scipy==1.5.2
 numpy==1.21.6
 tensorboard
-torch==1.13.1
-torchvision==0.14.1
-torchaudio==0.13.1
+torch
+torchvision
+torchaudio
 unidecode
 pyopenjtalk==0.3.0
 jamo
@@ -32,3 +32,4 @@ soundfile
 imageio==2.4.1
 youtube-dl
 pyzmq
+chardet
