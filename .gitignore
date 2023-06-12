@@ -21,3 +21,7 @@ text/__pycache__/
 OUTPUT_MODEL/
 __pycache__/
 monotonic_align/
+
+*.pth
+finetune_speaker.json
+moegoe_config.json
