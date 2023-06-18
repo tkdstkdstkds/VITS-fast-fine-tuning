@@ -20,6 +20,10 @@ Note: if already install torch cpu version, do pip uninstall torch, and do again
 >>> torch.cuda.is_available()
 should be True
 
+5. if find ImportError: No module named 'monotonic_align.core'
+you should create monotonic_align/monotonic_align folder
+then do python setup.py build_ext --inplace
+
 
 
 
