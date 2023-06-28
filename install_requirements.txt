@@ -8,6 +8,7 @@ and set C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\
 2. vscode create conda enviroment
 3. pip install -r requirements.txt
 here may happen pyopenjtalk not install correctly, should do pip install pyopenjtalk manually.
+here may happen scipy not install correctly, should do pip install scipy manually.
 
 4. make sure install torch and cude
 go to here select conda and os https://pytorch.org/get-started/locally/
