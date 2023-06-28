@@ -25,6 +25,9 @@ should be True
 you should create monotonic_align/monotonic_align folder
 then do python setup.py build_ext --inplace
 
+6. if have ffmpeg not found from torchaudio
+you should use anaconda to ffmpeg 4.2 version or greater
+this will download ffmpeg.exe into your .conda library
 
 
 
