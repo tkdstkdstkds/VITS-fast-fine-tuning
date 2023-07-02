@@ -10,9 +10,14 @@ and set C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\
 here may happen pyopenjtalk not install correctly, should do pip install pyopenjtalk manually.
 here may happen scipy not install correctly, should do pip install scipy manually.
 
-4. make sure install torch and cude
+4. make sure install torch and cuda
 go to here select conda and os https://pytorch.org/get-started/locally/
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+if you install python 3.7 and torch=1.13.1
+your cuda command should like:
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+
 You can use python check
 >>> import torch
 >>> print(torch.__version__)
@@ -22,7 +27,8 @@ Note: if already install torch cpu version, do pip uninstall torch, and do again
 should be True
 
 5. if find ImportError: No module named 'monotonic_align.core'
-you should create monotonic_align/monotonic_align folder
+you should cd "monotonic_align" folder,
+you should create "monotonic_align" folder again
 then do python setup.py build_ext --inplace
 
 6. if have ffmpeg not found from torchaudio
