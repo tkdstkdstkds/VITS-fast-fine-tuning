@@ -1,3 +1,4 @@
+import traceback
 import whisper
 import os
 import json
@@ -73,13 +74,15 @@ if __name__ == "__main__":
                 if wav.shape[1] / sr < 1:
                      print(f"{parent_dir + speaker + '/' + wavfile} too short, ignoring\n, value = {wav.shape[1] / sr}")
                      continue
+                
+                if wav.shape[1] / sr > 20:
+                    print(f"{parent_dir + speaker + '/' + wavfile} too long, ignoring\n, value = {wav.shape[1] / sr}")
+                    continue
 
                 wav = wav.mean(dim=0).unsqueeze(0)
                 if sr != target_sr:
                     wav = torchaudio.transforms.Resample(orig_freq=sr, new_freq=target_sr)(wav)
-                if wav.shape[1] / sr > 20:
-                    print(f"{wavfile} too long, ignoring\n")
-					continue
+
                 save_path = parent_dir + speaker + "/" + f"processed_{i}.wav"
                 torchaudio.save(save_path, wav, target_sr, channels_first=True)
                 # transcribe text
@@ -92,8 +95,9 @@ if __name__ == "__main__":
                 
                 processed_files += 1
                 print(f"Processed: {processed_files}/{total_files}")
-            except:
-                continue
+            except Exception as e:
+                print(f"{parent_dir + speaker + '/' + wavfile} error = {e}")
+                raise e
 
     # # clean annotation
     # import argparse
