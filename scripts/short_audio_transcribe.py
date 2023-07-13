@@ -69,11 +69,17 @@ if __name__ == "__main__":
             try:
                 wav, sr = torchaudio.load(parent_dir + speaker + "/" + wavfile, frame_offset=0, num_frames=-1, normalize=True,
                                           channels_first=True)
+                
+                if wav.shape[1] / sr < 1:
+                     print(f"{parent_dir + speaker + '/' + wavfile} too short, ignoring\n, value = {wav.shape[1] / sr}")
+                     continue
+
                 wav = wav.mean(dim=0).unsqueeze(0)
                 if sr != target_sr:
                     wav = torchaudio.transforms.Resample(orig_freq=sr, new_freq=target_sr)(wav)
                 if wav.shape[1] / sr > 20:
                     print(f"{wavfile} too long, ignoring\n")
+					continue
                 save_path = parent_dir + speaker + "/" + f"processed_{i}.wav"
                 torchaudio.save(save_path, wav, target_sr, channels_first=True)
                 # transcribe text
