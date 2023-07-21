@@ -17,6 +17,11 @@ rem 以下情况可以不勾选：
 rem 总样本量很大/样本质量很高/希望加速训练/只有二次元角色  
 
 rem 底模采样率可能与辅助数据不同，需要重采样
+
+if exist "mix_short_character_anno.txt" (
+    rename "short_character_anno.txt" "backup_short_character_anno.txt"
+    rename "mix_short_character_anno.txt" "short_character_anno.txt"
+)
 python preprocess_v2.py --add_auxiliary_data True --languages "CJE"
 
 pause
